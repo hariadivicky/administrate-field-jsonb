@@ -2,7 +2,7 @@
   eventName = 'ready'
   if (typeof TurboLinks !== 'undefined') eventName = 'turbolinks:load'
   if (typeof Turbo !== 'undefined') eventName = 'turbo:load'
-
+  console.log('is this code even called?')
   document.addEventListener(eventName, () => {
     let updatedJson, editor;
     document.querySelectorAll('.administrate-jsoneditor').forEach(administrateEditor => {
