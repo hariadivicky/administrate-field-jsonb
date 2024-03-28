@@ -4,10 +4,9 @@
   if (typeof Turbo !== 'undefined') eventName = 'turbo:load'
 
   document.addEventListener(eventName, () => {
-    let updatedJson;
-    $('.administrate-jsoneditor').each(function () {
-
-      let $current = $(this).find("textarea");
+    let updatedJson, editor;
+    document.querySelectorAll('.administrate-jsoneditor').forEach(administrateEditor => {
+      let $current = administrateEditor.querySelector('textarea');
 
       let options = {
         onChange: function () {
@@ -32,7 +31,7 @@
 
       let editor = new JSONEditor(this, options);
 
-      editor.set(JSON.parse($current.val()));
-    });
+      editor.set(JSON.parse($current.value));
+    })
   });
 })();
