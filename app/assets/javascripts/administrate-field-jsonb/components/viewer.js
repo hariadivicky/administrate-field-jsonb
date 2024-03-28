@@ -3,9 +3,8 @@
   if (typeof TurboLinks !== 'undefined') eventName = 'turbolinks:load'
   if (typeof Turbo !== 'undefined') eventName = 'turbo:load'
 
-  $(document).on(eventName, function () {
-    let viewer;
-    $('.administrate-jsoneditor-viewer').each(function (index) {
+  document.addEventListener(eventName, () => {
+    $('.administrate-jsoneditor-viewer').each(function () {
 
       let $current = $(this).find("textarea");
 
@@ -22,5 +21,5 @@
 
       viewer.set(JSON.parse($current.val()));
     });
-  });
+  })
 })();

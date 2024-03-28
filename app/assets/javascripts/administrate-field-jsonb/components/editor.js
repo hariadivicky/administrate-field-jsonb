@@ -3,9 +3,9 @@
   if (typeof TurboLinks !== 'undefined') eventName = 'turbolinks:load'
   if (typeof Turbo !== 'undefined') eventName = 'turbo:load'
 
-  $(document).on(eventName, function () {
-    let editor, updatedJson;
-    $('.administrate-jsoneditor').each(function (index) {
+  document.addEventListener(eventName, () => {
+    let updatedJson;
+    $('.administrate-jsoneditor').each(function () {
 
       let $current = $(this).find("textarea");
 
